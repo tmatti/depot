@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Your Pragmatic Catalog</h1>
+<% if @page_views > 5 %>
+    <h5>You have viewed this page <%= pluralize(@page_views, 'times') %>.</h5>
+<% end %>
 
 <% cache @products do %>
   <% @products.each do |product| %>
